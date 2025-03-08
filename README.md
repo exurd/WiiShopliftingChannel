@@ -2,7 +2,10 @@
 
 This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel). I aim it to be simple, easy to use and understandable.
 
-This program should be considered along the lines of PKGj/PKGi; the game is downloaded via the official CDN network, with a secondary file to help along. Using a patched IOS56, the program can use the Wii Shop Channel to install titles. When you select a title, the program installs the exact ticket needed to download. 
+This program is similar to PKGj/PKGi; the game is downloaded via the official CDN network, with a secondary file to help. Using a patched IOS56, the program can permit the Wii Shop Channel to install titles. When you select a title, the program installs the exact ticket needed to download it.
+
+>[!NOTE]
+> Commits that I have made for this forked project is licensed under The Unlicense.
 
 # Instructions
 
@@ -14,16 +17,16 @@ Download the latest release (currently not ready, but will be soon) and extract 
 
 There will be three files/folders: `app`, `wad` `tickets.tar`. Each of these files are important for the program to run.
 
-The `app` folder contains the program, called `WiiShopliftingChannel`.
+- The `app` folder contains the program, called `WiiShopliftingChannel`.
 
-Inspect the `wad` folder. It will contain two files. One is for Wii and the other is for the Wii U<!-- (or to nerds vWii)-->. Make sure to select the correct one for your console!
+- The `wad` folder will contain two files. One is for Wii and the other is for the Wii U<!-- (or to nerds vWii)-->. Make sure to select the correct one for your console!
 
-`tickets.tar` is the most important file. It contains ticket infomation for every title.
+- `tickets.tar` is the most important file. It contains ticket infomation for every title.
 
 With your SD Card mounted, and at root level (`D:\`, not `D:\folder\`), run through the following steps.
 
 1. Copy the `WiiShopliftingChannel` into the root `app` folder on your SD card.
-2. Copy the `.wad` for your system to the root wad folder of your SD card.
+2. Copy the correct `.wad` for your system to the root wad folder of your SD card.
 3. Copy the `tickets.tar` to the root of your SD card.
 
 Eject the SD card and insert into your console.
@@ -32,7 +35,8 @@ Eject the SD card and insert into your console.
 
 Open the Homebrew Launcher and select the WAD manager of your choice. Install the patched WAD to your NAND.
 
-If you are finished with the program or have second thoughts after installing the IOS, **DO NOT UNINSTALL THE WAD!** If you choose to uninstall, it will do as you asked and remove the IOS *entirely*, turning your console into a brick (unless recovered). 
+> [!WARNING]
+> If you are finished with the program or have second thoughts after installing the IOS, **DO NOT ATTEMPT TO UNINSTALL THE WAD!** If you uninstall the IOS, the WAD manager will do as you ask and remove the IOS *entirely*, turning your console into a brick (unless recovered).
 
 ## Running
 
@@ -46,7 +50,7 @@ If the ticket successfully installed, you can select the option to open the Wii 
 
 If you do not want to install anything, press the Home Button and the program will exit.
 
-When you open the Wii Shop Channel, make sure to select Yes to downloading the title. If you lose the download screen, you will have to open the `WiiShopliftingChannel` program and select your title to access the screen again.
+When you open the Wii Shop Channel, select Yes to download the title. If you lose the download screen, you must open the `WiiShopliftingChannel` program and choose your title to reaccess the screen.
 
 # Compiling
 
@@ -73,6 +77,5 @@ When successfully compiled, you will have a .elf and .dol file.
 
 <!-- Some titles are too large for the SD card, which can error out. -->
 
-# Note / Credits
-Commits that I have made for this forked project is licensed under The Unlicense.
-Thank you rxi for [microtar](https://github.com/rxi/microtar), and everyone involved with [yawmME](https://github.com/modmii/YAWM-ModMii-Edition): I would've not gotten this far without your amazing code!
+# Credits
+Thank you rxi for [microtar](https://github.com/rxi/microtar), larsenv for the original repository, [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel), and to everyone involved with [yawmME](https://github.com/modmii/YAWM-ModMii-Edition): I would've not gotten this far without your amazing efforts in Wii homebrewing!
