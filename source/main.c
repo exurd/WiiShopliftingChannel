@@ -153,7 +153,8 @@ MENU:
 		if (pressed == WPAD_BUTTON_A)
 		{
 			resetscreen();
-			int result = hard_ticket_to_nand(gamelist[selection].id);
+			// int result =
+			hard_ticket_to_nand(gamelist[selection].id);
 			printf("\n\nPress A to open the Wii Shop Channel.\n");
 			printf("Press B to go back.\n");
 			while (1)
