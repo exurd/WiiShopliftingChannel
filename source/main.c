@@ -63,7 +63,7 @@ MENU:
 		pressed = WPAD_ButtonsDown(0);
 
 		printf("\x1B[%d;%dH", 3, 0); // move console cursor to y/
-		printf("The Wii Shoplifting Channel\n");
+		printf("Wii Like To Party\n");
 		if (sd)
 		{
 			printf("Press 1 to download to NAND\t\t\t\t\t\t");
