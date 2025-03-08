@@ -50,7 +50,17 @@ When you open the Wii Shop Channel, make sure to select Yes to downloading the t
 
 # Compiling
 
-You will need [devkitPro](https://devkitpro.org/) installed, with the Wii compiler. Windows is the easiest way to run the SDK. In a MSYS2 terminal, go to the repo directory and run `make`.
+You will need [devkitPro](https://devkitpro.org/) installed with the Wii compiler. Windows is the easiest way to run the SDK.
+
+In a MSYS2 terminal, clone the repository:
+```sh
+git clone --recurse-submodules -j8 https://github.com/exurd/WiiShopliftingChannel.git
+```
+
+> [!IMPORTANT]
+> If you only do a `git clone`, it will not retrieve everything needed and the code will not compile. If you have already cloned the repo, running `git submodule update --init` inside the directory will get the required dependencies.
+
+Next, `cd` into the cloned repository and run `make`.
 
 When successfully compiled, you will have a .elf and .dol file.
 
