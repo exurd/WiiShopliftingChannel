@@ -5,7 +5,7 @@ This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiS
 This program is similar to PKGj/PKGi; the game is downloaded via the official CDN network, with a secondary file to help. Using a patched IOS56, the program can permit the Wii Shop Channel to install titles. When you select a title, the program installs the exact ticket needed to download it.
 
 >[!NOTE]
-> Commits that I have made for this forked project is licensed under The Unlicense.
+> Commits that I have made for this forked project is licensed under The Unlicense. For more information, read the UNLICENSE file.
 
 # Instructions
 
