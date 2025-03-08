@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <app version="1">
-    <name>Wii Shoplift Channel</name>
+    <name>Wii Like To Party</name>
     <coder>exurd, Larsenv</coder>
     <version>1.0</version>
-    <release_date>2025030100000</release_date>
+    <release_date>2025030800000</release_date>
     <short_description>Download any Wii Shop title</short_description>
     <long_description>
     This program is a fork of larsenv's WiiShopliftChannel. I aim it to be simple, easy to use and understandable. It lets you download whatever title you want off the Wii Shop Channel. Requires a patched version of IOS56.

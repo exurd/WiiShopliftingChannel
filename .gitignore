@@ -6,6 +6,7 @@ debug/
 
 # dol files
 *.dol
+!assets/forwarder/forward.dol
 
 
 # github/gitignore/C.gitignore

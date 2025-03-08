@@ -1,4 +1,4 @@
-![Wii Shoplifting Channel](http://transfer.archivete.am/9Qu6m/wiishop.png) <!-- ArchiveTeam rules! -->
+![Wii Like To Party](https://github.com/exurd/WiiLikeToParty/blob/main/assets/logo.png)
 
 This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel). I aim it to be simple, easy to use and understandable.
 
@@ -17,7 +17,7 @@ Download the latest release (currently not ready, but will be soon) and extract 
 
 There will be three files/folders: `app`, `wad` `tickets.tar`. Each of these files are important for the program to run.
 
-- The `app` folder contains the program, called `WiiShopliftingChannel`.
+- The `app` folder contains the program, called `WiiLikeToParty`.
 
 - The `wad` folder will contain two files. One is for Wii and the other is for the Wii U<!-- (or to nerds vWii)-->. Make sure to select the correct one for your console!
 
@@ -25,7 +25,7 @@ There will be three files/folders: `app`, `wad` `tickets.tar`. Each of these fil
 
 With your SD Card mounted, and at root level (`D:\`, not `D:\folder\`), run through the following steps.
 
-1. Copy the `WiiShopliftingChannel` into the root `app` folder on your SD card.
+1. Copy the `WiiLikeToParty` into the root `app` folder on your SD card.
 2. Copy the correct `.wad` for your system to the root wad folder of your SD card.
 3. Copy the `tickets.tar` to the root of your SD card.
 
@@ -40,7 +40,7 @@ Open the Homebrew Launcher and select the WAD manager of your choice. Install th
 
 ## Running
 
-Open the Homebrew Launcher of your choice and select the `WiiShopliftingChannel` tile. You will be greeted with some warnings. Press A once you have read them.
+Open the Homebrew Launcher of your choice and select the `WiiLikeToParty` tile. You will be greeted with some warnings. Press A once you have read them.
 
 A list of games will appear. Using the D-Pad, you can move the cursor up and down. Skip pages with left and right. Select where you want to install the title (SD card or NAND) with 1.
 
@@ -50,7 +50,7 @@ If the ticket successfully installed, you can select the option to open the Wii 
 
 If you do not want to install anything, press the Home Button and the program will exit.
 
-When you open the Wii Shop Channel, select Yes to download the title. If you lose the download screen, you must open the `WiiShopliftingChannel` program and choose your title to reaccess the screen.
+When you open the Wii Shop Channel, select Yes to download the title. If you lose the download screen, you must open the `WiiLikeToParty` program and choose your title to reaccess the screen.
 
 # Compiling
 
@@ -58,7 +58,7 @@ You will need [devkitPro](https://devkitpro.org/) installed with the Wii compile
 
 In a MSYS2 terminal, clone the repository:
 ```sh
-git clone --recurse-submodules -j8 https://github.com/exurd/WiiShopliftingChannel.git
+git clone --recurse-submodules -j8 https://github.com/exurd/WiiLikeToParty.git
 ```
 
 > [!IMPORTANT]
