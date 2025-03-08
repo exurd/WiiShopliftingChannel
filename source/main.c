@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <gccore.h>
 #include <wiiuse/wpad.h>
+
 #include "gamelist.h"
+#include "ticketman.h"
+#include "iospatch.h"
 
 #define ARROW " \x10"
 
@@ -16,13 +19,14 @@ void disclaimer()
 {
 	printf("This software lets you download titles from Wii Shop Channel after shutdown.\n");
 	printf("You must install the WADs that came with this tool in order to use this.\n");
-	printf("This may or may not be a legal way to download titles.\n");
-	printf("There isn't really a way to get these titles legally, so who cares\n\n");
-	printf("No one was doxed with this software.\n");
-	printf("Nor was the accusation of doxing on the Rii Shop project true.\n");
-	printf("I know that my reputation in the Wii community is tarnished.\n");
-	printf("My stay in the Wii community has been a journey\n\n");
-	printf("Press A to go back");
+	// printf("This may or may not be a legal way to download titles.\n");
+	printf("Installing too many titles can brick your system.\n\n");
+	printf("The serpent told the Woman, \"You won't die. God knows that the\n");
+	printf("moment you eat from that tree, you'll see what's really going on.\n");
+	printf("You'll be just like God, knowing everything, ranging all the way\n");
+	printf("from good to evil.\"\n");
+	printf("\t\t\t\t\t\t\t\t\t\tGenesis 3:4-5\n\n");
+	printf("Press A to view the game list.");
 
 	while (1)
 	{
@@ -58,7 +62,7 @@ MENU:
 		pressed = WPAD_ButtonsDown(0);
 
 		printf("\x1B[%d;%dH", 3, 0); // move console cursor to y/
-		printf("Wii Shoplift Channel v1.2 - By Larsenv\n");
+		printf("The Wii Shoplifting Channel\n");
 		if (sd)
 		{
 			printf("Press 1 to download to NAND\t\t\t\t\t\t");
@@ -67,14 +71,7 @@ MENU:
 		{
 			printf("Press 1 to download to SD\t\t\t\t\t\t\t");
 		}
-		printf("Press 2 to view a disclaimer\n\n");
-
-		if (pressed == WPAD_BUTTON_2)
-		{
-			disclaimer();
-			resetscreen();
-			goto MENU;
-		}
+		printf("Press HOME to exit the app.\n\n");
 
 		for (i = page * 16; i < (page * 16) + 16; i++)
 		{
@@ -155,14 +152,35 @@ MENU:
 
 		if (pressed == WPAD_BUTTON_A)
 		{
-			char title[61];
-			sprintf(title, "/oss/serv/B_09.jsp?titleId=%016llx&country=%s%s", gamelist[selection].id, gamelist[selection].country, (sd) ? "&SD=Y" : "");
-			WII_LaunchTitleWithArgs(0x0001000248414241LL, 0, title, NULL);
+			resetscreen();
+			int result = hard_ticket_to_nand(gamelist[selection].id);
+			printf("\n\nPress A to open the Wii Shop Channel.\n");
+			printf("Press B to go back.\n");
+			while (1)
+			{
+				WPAD_ScanPads();
+
+				u32 pressed = WPAD_ButtonsDown(0);
+
+				if (pressed & WPAD_BUTTON_A)
+				{
+					// if (result == 0) // ok
+					// {
+					char title[61];
+					sprintf(title, "/oss/serv/B_09.jsp?titleId=%016llx&country=%s%s", gamelist[selection].id, gamelist[selection].country, (sd) ? "&SD=Y" : "");
+					WII_LaunchTitleWithArgs(0x0001000248414241LL, 0, title, NULL);
+					// }
+				}
+				if (pressed & WPAD_BUTTON_B)
+				{
+					goto MENU;
+				}
+			}
 		}
 
 		if (pressed == WPAD_BUTTON_HOME)
 		{
-			printf("exiting");
+			printf("Exiting...");
 			return;
 		}
 	}
@@ -211,6 +229,12 @@ int main(int argc, char **argv)
 	PAD_Init();
 	WPAD_Init();
 
+	if (AHBPROT_DISABLED)
+	{
+		IOSPATCH_Apply();  // this gets past ISFS error -102
+	}
+	disclaimer();
+	resetscreen();
 	game_selectionmenu();
 
 	return 0;

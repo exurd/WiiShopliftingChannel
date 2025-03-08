@@ -1,8 +1,10 @@
-# IMPORTANT: We are aware of a announcement going out which says there are bricks occurring. We are sincerely sorry for that. The tickets filled up the inodes in the Wii system memory. We have already edited the instructions temporarily to stop recommending people to install all the tickets, and we plan to make a safer version
+#![Wii Shoplifting Channel](http://transfer.archivete.am/9Qu6m/wiishop.png) <!-- ArchiveTeam rules! -->
 
-![Wii Shoplift Channel](http://transfer.archivete.am/9Qu6m/wiishop.png)
+This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel). Commits that I have made are licensed under The Unlicense.
 
-Before we begin, I will say that I'm not responsible for what you do with this, this tool is a grey area.
+Writing instructions later.
+
+<!-- Before we begin, I will say that I'm not responsible for what you do with this, this tool is a grey area.
 
 This tool is intended to provide a way to download games from the Wii Shop directly onto your Wii, even after shutdown.
 
@@ -30,7 +32,7 @@ How does this work? You install a patched IOS56 for the Wii Shop Channel, instal
 
 1. Use **ftpii** to start up a FTP server.
 2. Use a FTP client on another device and enter the IP and port of the FTP server.
-3. Copy the tickets you want to your NAND folder -> **ticket** -> **00010001**. The NAND folder is called **isfs**.
+3. Copy the tickets you want to your NAND folder -> **ticket** -> **00010001**. The NAND folder is called **isfs**. -->
 
 # Wii Shop Error Codes
 
