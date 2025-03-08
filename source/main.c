@@ -17,6 +17,7 @@ static GXRModeObj *rmode = NULL;
 
 void disclaimer()
 {
+	printf("\n\n\n\n\n\n\n\n");
 	printf("This software lets you download titles from Wii Shop Channel after shutdown.\n");
 	printf("You must install the WADs that came with this tool in order to use this.\n");
 	// printf("This may or may not be a legal way to download titles.\n");
@@ -25,7 +26,7 @@ void disclaimer()
 	printf("moment you eat from that tree, you'll see what's really going on.\n");
 	printf("You'll be just like God, knowing everything, ranging all the way\n");
 	printf("from good to evil.\"\n");
-	printf("\t\t\t\t\t\t\t\t\t\tGenesis 3:4-5\n\n");
+	printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\tGenesis 3:4-5\n\n");
 	printf("Press A to view the game list.");
 
 	while (1)
