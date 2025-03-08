@@ -1,45 +1,68 @@
-#![Wii Shoplifting Channel](http://transfer.archivete.am/9Qu6m/wiishop.png) <!-- ArchiveTeam rules! -->
+![Wii Shoplifting Channel](http://transfer.archivete.am/9Qu6m/wiishop.png) <!-- ArchiveTeam rules! -->
 
-This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel). Commits that I have made are licensed under The Unlicense.
+This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel). I aim it to be simple, easy to use and understandable.
 
-Writing instructions later.
-
-<!-- Before we begin, I will say that I'm not responsible for what you do with this, this tool is a grey area.
-
-This tool is intended to provide a way to download games from the Wii Shop directly onto your Wii, even after shutdown.
-
-After the disaster that was Rii Shop where I was hit with a accusation that I used it to dox people, which was false (and I got harassment and some scary stuff happened as a result and it devastated me how the community reacted), people have tried making a Wii Shop revival themselves, however I found that all of them have failed to make a working shop revival. None of them worked...until now.
-
-How does this work? You install a patched IOS56 for the Wii Shop Channel, install a ton of tickets, and then use this homebrew app to select what game you want from the Wii Shop Channel, and it launches the shop then navigates to the download page in the Wii Shop Channel.
+This program should be considered along the lines of PKGj/PKGi; the game is downloaded via the official CDN network, with a secondary file to help along. Using a patched IOS56, the program can use the Wii Shop Channel to install titles. When you select a title, the program installs the exact ticket needed to download. 
 
 # Instructions
 
-1.	Perform a NAND backup prior to using this tool, as it can be potentially dangerous. Also, make sure you are using the latest version of the tool. Older versions have major issues that could mess up things.
-2.	Download **WiiXplorer** (if you are using a Wii) and the **Wii Shoplift Channel** application.
-3.	Put the app and the **WAD** folder included in the zip file on your SD/USB. (If using a Wii U, you do not need to copy the ticket folder)
-4.	Launch your favorite **WAD Manager** and install the patched **IOS56** for your corresponding system.
-5.	Get the title ID of the game you want to install from [http://github.com/larsenv/WiiShopliftChannel/blob/main/source/template.c#L46](here) and copy the ticket with that ID to the ticket folder on your SD (the filename is that ID without **00010001** at the start of the name). If using a Wii, follow the instructions below for **Installing Tickets (WiiXplorer)** or **Installing Tickets (FTP)**. Otherwise, if you are using a Wii U, follow the instructions below for **Installing Tickets (Wii U Only)**. (WiiXplorer cannot install tickets properly on a Wii U) ***We are working on a app update to copy the tickets automatically.***
-7.	On the Wii Menu, you might get a message saying the Wii System Memory is full. If you do, then free up some space.
-8.	Open **Wii Shoplift Channel** and select the game you want to download. The **Wii Shop Channel** will download the game, and it will appear on your **Wii Menu**. Also, if you enable the option to download directly to the SD, it may not work if the file size is too large
+## Before anything...
+[Backup.](https://wii.hacks.guide/bootmii.html) [Your.](https://wii.hacks.guide/bootmii.html) [NAND.](https://wii.hacks.guide/bootmii.html) If done correctly, you will be able to easily revert any changes made by the instructions or program.
 
-## Installing Tickets (WiiXplorer)
+## Preparation
+Download the latest release (currently not ready, but will be soon) and extract the zip file.
 
-1. Open **WiiXplorer**. Go to **Start** > **Settings** > **Boot Settings** > **Enable NAND Write Access**. Press **Yes**, then **Accept**, then press **Back** until you return to the main menu.
-2. Select the tickets you want to install. Press the **Plus Button**, then press **Copy**.
-3. Navigate to **nand** -> **ticket** -> **00010001*. Press the **Plus Button** again, then press **Paste**. Wait until the process finishes. If you get a dialog asking if you want to replace files, select **No to All**.
+There will be three files/folders: `app`, `wad` `tickets.tar`. Each of these files are important for the program to run.
 
-## Installing Tickets (FTP)
+The `app` folder contains the program, called `WiiShopliftingChannel`.
 
-1. Use **ftpii** to start up a FTP server.
-2. Use a FTP client on another device and enter the IP and port of the FTP server.
-3. Copy the tickets you want to your NAND folder -> **ticket** -> **00010001**. The NAND folder is called **isfs**. -->
+Inspect the `wad` folder. It will contain two files. One is for Wii and the other is for the Wii U<!-- (or to nerds vWii)-->. Make sure to select the correct one for your console!
+
+`tickets.tar` is the most important file. It contains ticket infomation for every title.
+
+With your SD Card mounted, and at root level (`D:\`, not `D:\folder\`), run through the following steps.
+
+1. Copy the `WiiShopliftingChannel` into the root `app` folder on your SD card.
+2. Copy the `.wad` for your system to the root wad folder of your SD card.
+3. Copy the `tickets.tar` to the root of your SD card.
+
+Eject the SD card and insert into your console.
+
+## Installing the WAD
+
+Open the Homebrew Launcher and select the WAD manager of your choice. Install the patched WAD to your NAND.
+
+If you are finished with the program or have second thoughts after installing the IOS, **DO NOT UNINSTALL THE WAD!** If you choose to uninstall, it will do as you asked and remove the IOS *entirely*, turning your console into a brick (unless recovered). 
+
+## Running
+
+Open the Homebrew Launcher of your choice and select the `WiiShopliftingChannel` tile. You will be greeted with some warnings. Press A once you have read them.
+
+A list of games will appear. Using the D-Pad, you can move the cursor up and down. Skip pages with left and right. Select where you want to install the title (SD card or NAND) with 1.
+
+Once you have found a game you want to download, press A. The program will then attempt to install the selected game's ticket (from `ticket.tar`).
+
+If the ticket successfully installed, you can select the option to open the Wii Shop Channel. Otherwise, take note of the error (press B to exit the install screen).
+
+If you do not want to install anything, press the Home Button and the program will exit.
+
+When you open the Wii Shop Channel, make sure to select Yes to downloading the title. If you lose the download screen, you will have to open the `WiiShopliftingChannel` program and select your title to access the screen again.
+
+# Compiling
+
+You will need [devkitPro](https://devkitpro.org/) installed, with the Wii compiler. Windows is the easiest way to run the SDK. In a MSYS2 terminal, go to the repo directory and run `make`.
+
+When successfully compiled, you will have a .elf and .dol file.
 
 # Wii Shop Error Codes
 
-204036 - IOS isn't patched
+- 204036 - IOS56 has not been patched yet. Dolphin currently errors with this, even after installing the patched IOS.
+- 204050 - The ticket was not installed correctly.
+- 205626 - The Wii has been region changed. Change your region to its prior setting, or delete your Wii Shop account to create an account based on the new region.
+- 209601 - This error can happen when taking too long to choose an option.
 
-204050 - Tickets not installed
+<!-- Some titles are too large for the SD card, which can error out. -->
 
-205626 - Wii was region changed, either change your region to its prior setting or delete your Wii Shop account and try again
-
-209601 - If you get this error you can ignore it
+# Note / Credits
+Commits that I have made for this forked project is licensed under The Unlicense.
+Thank you rxi for [microtar](https://github.com/rxi/microtar), and everyone involved with [yawmME](https://github.com/modmii/YAWM-ModMii-Edition): I would've not gotten this far without your amazing code!
