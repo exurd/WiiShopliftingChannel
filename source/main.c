@@ -183,7 +183,7 @@ MENU:
 		if (pressed == WPAD_BUTTON_HOME)
 		{
 			printf("Exiting...");
-			return;
+			exit(0);
 		}
 	}
 }
@@ -239,5 +239,5 @@ int main(int argc, char **argv)
 	resetscreen();
 	game_selectionmenu();
 
-	return 0;
+	exit(0);
 }
