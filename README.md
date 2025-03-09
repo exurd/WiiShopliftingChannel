@@ -13,11 +13,11 @@ This program is similar to PKGj/PKGi; the game is downloaded via the official CD
 [Backup.](https://wii.hacks.guide/bootmii.html) [Your.](https://wii.hacks.guide/bootmii.html) [NAND.](https://wii.hacks.guide/bootmii.html) If done correctly, you will be able to easily revert any changes made by the instructions or program.
 
 ## Preparation
-Download the latest release (currently not ready, but will be soon) and extract the zip file.
+Download the [latest release](https://github.com/exurd/WiiLikeToParty/releases) and extract the zip file.
 
-There will be three files/folders: `app`, `wad` `tickets.tar`. Each of these files are important for the program to run.
+There will be three files/folders: `apps`, `wad` `tickets.tar`. Each of these files are important for the program to run.
 
-- The `app` folder contains the program, called `WiiLikeToParty`.
+- The `apps` folder contains the program, called `WiiLikeToParty`.
 
 - The `wad` folder will contain two files. One is for Wii and the other is for the Wii U<!-- (or to nerds vWii)-->. Make sure to select the correct one for your console!
 
@@ -25,7 +25,7 @@ There will be three files/folders: `app`, `wad` `tickets.tar`. Each of these fil
 
 With your SD Card mounted, and at root level (`D:\`, not `D:\folder\`), run through the following steps.
 
-1. Copy the `WiiLikeToParty` into the root `app` folder on your SD card.
+1. Copy the `WiiLikeToParty` folder into the root `apps` folder on your SD card.
 2. Copy the correct `.wad` for your system to the root wad folder of your SD card.
 3. Copy the `tickets.tar` to the root of your SD card.
 
