@@ -60,7 +60,8 @@ int hard_ticket_to_nand(uint64_t value) {
 
     // open tickets.tar
     printf("Finding ticket in TAR file...\n");
-    if (mtar_open(&tar, "sd:/tickets.tar", "r") != MTAR_ESUCCESS) {
+    if (mtar_open(&tar, "sd:/tickets.tar", "r") != MTAR_ESUCCESS &&
+        mtar_open(&tar, "sd:/apps/WiiLikeToParty/tickets.tar", "r") != MTAR_ESUCCESS) {
         printf("Failed to open the tar archive.\n");
         return -1;
     }
