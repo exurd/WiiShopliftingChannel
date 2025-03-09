@@ -66,11 +66,11 @@ MENU:
 		printf("Wii Like To Party\n");
 		if (sd)
 		{
-			printf("Press 1 to download to NAND\t\t\t\t\t\t");
+			printf("Downloading to SD card (1) \t\t\t\t\t\t");
 		}
 		else
 		{
-			printf("Press 1 to download to SD\t\t\t\t\t\t\t");
+			printf("Downloading to NAND (1)\t\t\t\t\t\t\t");
 		}
 		printf("Press HOME to exit the app.\n\n");
 
