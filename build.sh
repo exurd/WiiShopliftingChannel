@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 echo "Building program..."
-source /etc/profile.d/devkit-env.sh
+if [[ ! $OSTYPE == 'darwin'* ]]; then
+    source /etc/profile.d/devkit-env.sh
+fi
 make clean && make
 
 
