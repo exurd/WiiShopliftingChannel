@@ -4,9 +4,15 @@ build/
 # debug folder
 debug/
 
+# release folder
+release/
+
 # dol files
 *.dol
 !assets/forwarder/forward.dol
+
+# release files
+WiiLikeToParty_*.zip
 
 
 # github/gitignore/C.gitignore
