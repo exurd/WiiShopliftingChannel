@@ -17,9 +17,9 @@ include $(DEVKITPPC)/wii_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source external/microtar/src external/yawm
+SOURCES		:=	source external/microtar/src
 DATA		:=	data
-INCLUDES	:=  external/microtar/src external/yawm
+INCLUDES	:=  external/microtar/src external/yawm/source
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -51,7 +51,8 @@ ifneq ($(BUILD),$(notdir $(CURDIR)))
 export OUTPUT	:=	$(CURDIR)/$(TARGET)
 
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
-					$(foreach dir,$(DATA),$(CURDIR)/$(dir))
+					$(foreach dir,$(DATA),$(CURDIR)/$(dir)) \
+					$(CURDIR)/external/yawm/source
 
 export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 
@@ -63,6 +64,9 @@ CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
 sFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.S)))
 BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
+
+# specify external cfiles
+CFILES		+=	iospatch.c
 
 #---------------------------------------------------------------------------------
 # use CXX for linking C++ projects, CC for standard C
