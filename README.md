@@ -2,7 +2,9 @@
 
 This is a fork of larsenv's [WiiShopliftChannel](https://github.com/larsenv/WiiShopliftChannel). I aim it to be simple, easy to use and understandable.
 
-This program is similar to PKGj/PKGi; the game is downloaded via the official CDN network, with a secondary file to help. Using a patched IOS56, the program can permit the Wii Shop Channel to install titles. When you select a title, the program installs the exact ticket needed to download it.
+This program is similar to PKGj/PKGi; the game is downloaded via the official CDN network, with a secondary file (a ticket) to help. Using a patched IOS56, the program can permit the Wii Shop Channel to install titles.
+
+When you select a title, the program automatically searches through a local database and installs the exact ticket needed. **No other tickets are installed. No tickets need to be manually installed for it to work.**
 
 >[!NOTE]
 > Commits that I have made for this forked project is licensed under The Unlicense. For more information, read the UNLICENSE file.
@@ -33,7 +35,7 @@ Eject the SD card and insert into your console.
 Open the Homebrew Launcher and select the WAD manager of your choice. Install the patched WAD to your NAND.
 
 > [!WARNING]
-> If you are finished with the program or have second thoughts after installing the IOS, **DO NOT ATTEMPT TO UNINSTALL THE IOS WAD!** If you uninstall the IOS, the WAD manager will do as you ask and remove the IOS *entirely*, turning your console into a brick unless recovered via BootMii.
+> If you are finished with the program or have second thoughts after installing the IOS, **DO NOT ATTEMPT TO UNINSTALL THE IOS WAD!** If you uninstall the IOS, the WAD manager will do as you ask and remove the IOS *entirely*, turning your console into a brick unless recovered via BootMii. Instead, download a fresh IOS58 from NUS (or ModMii) and install that.
 
 ## Running
 
@@ -41,7 +43,7 @@ Open the Homebrew Launcher of your choice and select the `WiiLikeToParty` tile. 
 
 A list of games will appear. Using the D-Pad, you can move the cursor up and down. Skip pages with left and right. Select where you want to install the title (SD card or NAND) with 1.
 
-Once you have found a game you want to download, press A. The program will then attempt to install the selected game's ticket (from `ticket.tar`).
+Once you have found a game you want to download, press A. The program will then attempt to install the selected game's ticket **(and only the game's ticket)**.
 
 If the ticket successfully installed, you can select the option to open the Wii Shop Channel. Otherwise, take note of the error (press B to exit the install screen).
 
