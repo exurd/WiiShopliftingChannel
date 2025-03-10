@@ -15,6 +15,18 @@ static void *xfb = NULL;
 static GXRModeObj *rmode = NULL;
 
 
+// larsenv/GlowWii/source/main.c @ 3655408
+bool isDolphin(void)
+{
+    s32 checkDolphin;
+    checkDolphin = IOS_Open("/dev/dolphin", IPC_OPEN_NONE);
+    if (checkDolphin >= 0)
+        return true;
+    else
+        return false;
+}
+
+
 void disclaimer()
 {
 	printf("\n\n\n\n\n\n\n\n");
@@ -231,7 +243,7 @@ int main(int argc, char **argv)
 	PAD_Init();
 	WPAD_Init();
 
-	if (AHBPROT_DISABLED)
+	if (AHBPROT_DISABLED && !isDolphin())
 	{
 		IOSPATCH_Apply();  // this gets past ISFS error -102
 	}
