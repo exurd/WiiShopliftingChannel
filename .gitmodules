@@ -1,3 +1,8 @@
 [submodule "external/microtar"]
 	path = external/microtar
 	url = https://github.com/rxi/microtar.git
+	ignore = dirty
+[submodule "external/yawm"]
+	path = external/yawm
+	url = https://github.com/modmii/YAWM-ModMii-Edition.git
+	ignore = dirty
